@@ -1,4 +1,4 @@
-import { AppDataSource } from "./orm.config";
+import { AppDataSource } from "./ormconfig";
 
 export const databaseProviders = [
     {

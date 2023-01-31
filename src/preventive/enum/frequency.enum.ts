@@ -1,0 +1,14 @@
+export enum Frequency{
+    DIARIAMENTE,
+    SEMANAL,
+    QUINZENAL,
+    MENSAL,
+    BIMESTRAL, 
+    TRIMESTRAL,
+    QUADRIMESTRAL,
+    SEMESTRAL,
+    ANUAL,
+    BIANUAL,
+    TRIANUAL,
+    QUINQUENAL
+}
