@@ -1,20 +1,29 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus } from '@nestjs/common';
+import { NestResponseBuilder } from 'src/core/http/nest-response-builder';
 import { CreatePreventiveDto } from '../dto/create-preventive.dto';
 import { UpdatePreventiveDto } from '../dto/update-preventive.dto';
 import { PreventiveService } from '../services/preventive.service';
 
 @Controller()
 export class PreventiveController {
-  constructor(private readonly preventiveService: PreventiveService) {}
+  constructor(private readonly preventiveService: PreventiveService) { }
 
   @Post('/preventive')
   async create(@Body() createPreventiveDto: CreatePreventiveDto) {
-    try{
+    try {
       const result = await this.preventiveService.create(createPreventiveDto);
-      return result;
-    }catch(error){
-      return error;
-    }    
+
+      return new NestResponseBuilder()
+        .withStatus(HttpStatus.CREATED)
+        .withBody(result)
+        .build();
+
+    } catch (error) {
+      return new NestResponseBuilder()
+        .withStatus(HttpStatus.BAD_REQUEST)
+        .withBody(error)
+        .build();
+    }
   }
 
   @Get()
