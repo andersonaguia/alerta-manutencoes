@@ -1,34 +1,42 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
-import { Frequency } from "../enum/frequency.enum";
+import { CategoryEntity } from "src/maintenances/entities/category.entity";
+import { FrequencyEntity } from "src/maintenances/entities/frequency.entity";
+import { ResponsibleEntity } from "src/maintenances/entities/responsible.entity";
+import { Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity({name: "preventive_maintenance"})
+@Entity({ name: "maintenance_preventive" })
 export class PreventiveEntity {
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column({
-        length: 100,
-        nullable: false
-    })
-    category: string;
-
-    @Column({
-        nullable: false
+        nullable: false,
+        type: "text"
     })
     activity: string;
 
-    @Column({
-        type: "enum",
-        enum: Frequency,
-        default: Frequency.MENSAL,
-        nullable: false
-    })
-    frequency: Frequency;
+    @ManyToOne(
+        () => FrequencyEntity,
+        (frequency) => frequency.id,
+        { eager: true, onDelete: 'SET NULL' }
+    )
+    @JoinColumn({ name: 'maintenance_frequency_id' })
+    frequency: FrequencyEntity;
 
-    @Column({
-        length: 100
-    })
-    responsible: string;
+    @ManyToOne(
+        () => CategoryEntity,
+        (category) => category.id,
+        { eager: true, onDelete: 'SET NULL' }
+    )
+    @JoinColumn({ name: 'maintenance_category_id' })
+    category: CategoryEntity;
+
+    @ManyToOne(
+        () => ResponsibleEntity,
+        (responsible) => responsible.id,
+        { eager: true, onDelete: 'SET NULL' }
+    )
+    @JoinColumn({ name: 'maintenance_responsible_id' })
+    responsible: ResponsibleEntity;
 
     @Column()
     last: Date;
@@ -40,4 +48,10 @@ export class PreventiveEntity {
         default: true
     })
     sendEmail: boolean;
+
+    @Column()
+    created_at: Date;
+
+    @Column()
+    updated_at: Date;
 }

@@ -11,7 +11,7 @@ export class PreventiveService {
     @Inject('PREVENTIVE_REPOSITORY')
     private preventiveRepository: Repository<PreventiveEntity>
   ) { }
-
+/*
   initialInsert(preventiveData: CreatePreventiveDto) {
     const maintenances = maintenancesArray;
     maintenances.map(async (maintenance) => {
@@ -70,16 +70,16 @@ export class PreventiveService {
       }
     })
   }
-
+*/
   create(preventiveData: CreatePreventiveDto): Promise<PreventiveEntity> {
     return new Promise(async (resolve, reject) => {
       try {
         if (new Date(preventiveData.next) > new Date()) {
-          const preventive = this.preventiveRepository.create(preventiveData);
+          /*const preventive = this.preventiveRepository.create(preventiveData);
           preventive.category = preventiveData.category.toUpperCase();
           preventive.responsible = preventiveData.responsible.toUpperCase();
           const preventiveSaved = await this.preventiveRepository.save(preventive);
-          resolve(preventiveSaved);
+          resolve(preventiveSaved);*/
         }
         reject("Data da próxima manutenção é inválida");
       } catch (error) {
