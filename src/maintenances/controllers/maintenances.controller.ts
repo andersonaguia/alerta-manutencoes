@@ -1,31 +1,51 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { CreateFrequencyDto } from '../dto/create-frequency.dto';
-import { UpdateMaintenanceDto } from '../dto/update-maintenance.dto';
-import { MaintenancesService } from '../services/maintenances.service';
+import { CreateFrequencyService } from '../services/frequency/create-frequency.service';
+import { CreateCategoryService } from '../services/category/create-category.service';
+import { CreateResponsibleService } from '../services/responsible/create-responsible.service';
 
 @Controller()
-export class MaintenancesController {
-  constructor(private readonly maintenancesService: MaintenancesService) { }
+export class FrequencyController {
+  constructor(
+    private readonly createFrequencyService: CreateFrequencyService,
+    private readonly createCategoryService: CreateCategoryService,
+    private readonly createResponsibleService: CreateResponsibleService
+  ) { }
 
   @Post('/maintenances/frequency')
   async create(@Body() data: CreateFrequencyDto) {
-    try{
-      const result = await this.maintenancesService.create(data);
+    try {
+      const result = await this.createFrequencyService.create(data);
 
-      if(result){
+      if (result) {
         return result;
       }
 
-    }catch(error){
+    } catch (error) {
       return error
-    }    
-  }
-/*
-  @Get()
-  findAll() {
-    return this.maintenancesService.findAll();
+    }
   }
 
+  @Get('/maintenances/category')
+  async findAll() {
+    try {
+      const result = await this.createCategoryService.initialInsert();
+      return result;
+    } catch (error) {
+      return error
+    }
+  }
+
+  @Get('/maintenances/responsible')
+  async findAlls() {
+    try {
+      const result = await this.createResponsibleService.initialInsert();
+      return result;
+    } catch (error) {
+      return error
+    }
+  }
+/*
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.maintenancesService.findOne(+id);
@@ -39,5 +59,5 @@ export class MaintenancesController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.maintenancesService.remove(+id);
-  }*/
+  } */
 }

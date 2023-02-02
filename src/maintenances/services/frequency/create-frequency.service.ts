@@ -1,10 +1,10 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
-import { CreateFrequencyDto } from '../dto/create-frequency.dto';
-import { FrequencyEntity } from '../entities/frequency.entity';
+import { CreateFrequencyDto } from '../../dto/create-frequency.dto';
+import { FrequencyEntity } from '../../entities/frequency.entity';
 
 @Injectable()
-export class MaintenancesService {
+export class CreateFrequencyService {
   constructor(
     @Inject('FREQUENCY_REPOSITORY')
     private frequencyRepository: Repository<FrequencyEntity>
@@ -26,7 +26,6 @@ export class MaintenancesService {
         reject(error);
       }
     })
-    return 'This action adds a new maintenance';
   }
 /*
   findAll() {

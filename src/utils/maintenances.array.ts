@@ -74,7 +74,7 @@ export const maintenancesArray = [
         "sistema": "BAR",
         "atividade": "Manutenção no inox (limpeza e proteção química).",
         "periodicidade": "Mensal",
-        "responsavel": "HELPPY?",
+        "responsavel": "HELPPY",
         "ultima": "2022-05-14 13:43:19",
         "proxima": "2022-06-01 13:43:19",
         "email": "1"
@@ -94,7 +94,7 @@ export const maintenancesArray = [
         "sistema": "CLARABÒIAS E PELE DE VIDRO",
         "atividade": "Limpeza do vidro (evite jatos de água de pressão) conforme recomendação do fabricante. Veriﬁcar as condições de vedação de água e vento.",
         "periodicidade": "Anual",
-        "responsavel": "HELPPY?",
+        "responsavel": "HELPPY",
         "ultima": "2022-05-14 13:47:50",
         "proxima": "2022-06-14 13:47:50",
         "email": "0"
@@ -111,7 +111,7 @@ export const maintenancesArray = [
     },
     {
         "id": "12",
-        "sistema": "DECK, CARAMANCHÃO ITENS DE  MADEIRA (MESAS, CADEIR",
+        "sistema": "DECK, CARAMANCHÃO ITENS DE  MADEIRA",
         "atividade": "A camada protetora da madeira (Cetol Deck) deverá ser revisada e, se necessária, removida e refeita, a ﬁm de retomar o desempenho inicial. Veriﬁcar a integridade e os elementos de ﬁxação, bem como existência de rachaduras. Verificar se houveram deslocamentos mediante dilatações térmicas.",
         "periodicidade": "Anual",
         "responsavel": "MANUTENÇÃO SOLAR",
@@ -121,7 +121,7 @@ export const maintenancesArray = [
     },
     {
         "id": "13",
-        "sistema": "DECK, CARAMANCHÃO ITENS DE  MADEIRA (MESAS, CADEIR",
+        "sistema": "DECK, CARAMANCHÃO ITENS DE  MADEIRA",
         "atividade": "Veriﬁcar a existência de fungos, mofos, bolores e focos de insetos.",
         "periodicidade": "Semestral",
         "responsavel": "MANUTENÇÃO SOLAR",
@@ -254,7 +254,7 @@ export const maintenancesArray = [
         "sistema": "ESPAÇO KIDS",
         "atividade": "Realizar vistoria de responsabilidade técnica, veriﬁcando todos os requisitos de segurança listados na Norma ABNT NBR 16071-7:2012 Versão Corrigida: 2012. Vistoria observando a integridade do piso, que poderá ser substituido pelo piso armazenado em estoque.",
         "periodicidade": "Anual",
-        "responsavel": "EMPRESA TERCEIRIZADA?",
+        "responsavel": "NÃO DEFINIDO",
         "ultima": "2022-05-14 15:04:37",
         "proxima": "2022-05-14 15:04:37",
         "email": "0"
@@ -264,7 +264,7 @@ export const maintenancesArray = [
         "sistema": "ESPAÇO KIDS",
         "atividade": "Vistoria observando estrutura dos brinquedos (de madeira, plásco e ferro), presença de superficies cortantes, lascas, parafusos soltos, encaixes folgados, rachaduras, metais\/correntes oxidados, desgastes nas engrenagens ou descascamento de pintura. Solici",
         "periodicidade": "Mensal",
-        "responsavel": "MANUTENÇÃO SOLAR?",
+        "responsavel": "NÃO DEFINIDO",
         "ultima": "2022-05-14 15:05:24",
         "proxima": "2022-05-14 15:05:24",
         "email": "0"
@@ -274,7 +274,7 @@ export const maintenancesArray = [
         "sistema": "JANELAS DE ALUMINIO",
         "atividade": "Veriﬁcar vedação e ﬁxação dos vidros em janelas. Regulagem e lubriﬁcação de drenos, trilhos, mecanismos de fechamento e seus componentes.",
         "periodicidade": "Bimestral",
-        "responsavel": "?",
+        "responsavel": "NÃO DEFINIDO",
         "ultima": "2022-05-14 15:07:33",
         "proxima": "2022-05-14 15:07:33",
         "email": "0"
@@ -284,14 +284,14 @@ export const maintenancesArray = [
         "sistema": "JANELAS DE ALUMINIO",
         "atividade": "Limpeza das borrachas de vedação, substituindo as que estiverem endurecidas ou ressecadas. Reapertar os parafusos aparentes de fechos, fechaduras ou puxadores e roldanas. Verificar a presença de fissuras, falhas na vedação e fixação nos caixilhos e reconstituir sua integridade onde for necessário. Verificar nas janelas Maxim-air a necessidade de regular o freio. Para isso, abrir a janela até um ponto intermediário (± 30º), no qual ela deve permanecer parada e oferecer certa resistência a movimento espontâneo. Se necessária, a regulagem deverá ser feita somente por pessoa especializada, para não colocar em risco a segurança do usuário e de terceiros.",
         "periodicidade": "Semestral",
-        "responsavel": "?",
+        "responsavel": "NÃO DEFINIDO",
         "ultima": "2022-05-14 15:08:26",
         "proxima": "2022-05-14 15:08:26",
         "email": "0"
     },
     {
         "id": "30",
-        "sistema": "ESQUADRIA DE AÇO INOX - CORRIMÃO, GUARDA CORPO E B",
+        "sistema": "ESQUADRIA DE AÇO INOX",
         "atividade": "Limpeza com produto neutro e secagem imediata.",
         "periodicidade": "Mensal",
         "responsavel": "HELPPY",
@@ -301,7 +301,7 @@ export const maintenancesArray = [
     },
     {
         "id": "31",
-        "sistema": "ESQUADRIA DE AÇO INOX - CORRIMÃO, GUARDA CORPO E B",
+        "sistema": "ESQUADRIA DE AÇO INOX",
         "atividade": "Limpeza e isolamento químico prevenindo surgimento de pontos de oxidação.",
         "periodicidade": "Semestral",
         "responsavel": "HELPPY",
@@ -311,7 +311,7 @@ export const maintenancesArray = [
     },
     {
         "id": "32",
-        "sistema": "ESQUADRIA DE AÇO INOX - CORRIMÃO, GUARDA CORPO E B",
+        "sistema": "ESQUADRIA DE AÇO INOX",
         "atividade": "Veriﬁcar pontos de ﬁxações e reconstuir onde for necessário.",
         "periodicidade": "Anual",
         "responsavel": "MANUTENÇÃO SOLAR",
@@ -321,7 +321,7 @@ export const maintenancesArray = [
     },
     {
         "id": "33",
-        "sistema": "ESQUADRIA DE FERRO - ESCADA MARINHEIRO, TAMPAS DAS",
+        "sistema": "ESQUADRIA DE FERRO",
         "atividade": "Limpeza geral.",
         "periodicidade": "Quinzenal",
         "responsavel": "HELPPY",
@@ -331,7 +331,7 @@ export const maintenancesArray = [
     },
     {
         "id": "34",
-        "sistema": "ESQUADRIA DE FERRO - ESCADA MARINHEIRO, TAMPAS DAS",
+        "sistema": "ESQUADRIA DE FERRO",
         "atividade": "Tratar as áreas e elementos expostos ao tempo com pontos de oxidação.",
         "periodicidade": "Semestral",
         "responsavel": "MANUTENÇÃO SOLAR",
@@ -341,7 +341,7 @@ export const maintenancesArray = [
     },
     {
         "id": "35",
-        "sistema": "ESQUADRIA DE FERRO - ESCADA MARINHEIRO, TAMPAS DAS",
+        "sistema": "ESQUADRIA DE FERRO",
         "atividade": "Veriﬁcar e, se necessário, pintar ou executar serviços com as mesmas especiﬁcações da pintura original. Veriﬁcar pontos de ﬁxações e reconstuir onde for necessário.",
         "periodicidade": "Anual",
         "responsavel": "MANUTENÇÃO SOLAR",
@@ -364,7 +364,7 @@ export const maintenancesArray = [
         "sistema": "CAIXAS DE ESGOTO, GORDURA E ÁGUA PLUVIAL",
         "atividade": "Limpeza fina.",
         "periodicidade": "Anual",
-        "responsavel": "?",
+        "responsavel": "NÃO DEFINIDO",
         "ultima": "2022-05-14 15:17:50",
         "proxima": "2022-05-14 15:17:50",
         "email": "0"
@@ -384,7 +384,7 @@ export const maintenancesArray = [
         "sistema": "ESTRUTURA",
         "atividade": "Veriﬁcar a integridade estrutural (lajes, vigas e pilares), conforme ABNT NBR\n15575:2013. Veriﬁcar ﬁssuras e trincas , principalmente quando houver construção na vizinhança e no entorno. Veriﬁcar trincas, ﬁssuras, inﬁltrações, rachaduras e deslocamento de revestimentos.",
         "periodicidade": "Anual",
-        "responsavel": "?",
+        "responsavel": "NÃO DEFINIDO",
         "ultima": "2022-05-14 15:19:09",
         "proxima": "2022-05-14 15:19:09",
         "email": "0"
@@ -414,7 +414,7 @@ export const maintenancesArray = [
         "sistema": "FACHADA - REVESTIMENTO CERÂMICO",
         "atividade": "Limpeza da fachada afim de evitar o escurecimento do rejunte.",
         "periodicidade": "Anual",
-        "responsavel": "?",
+        "responsavel": "NÃO DEFINIDO",
         "ultima": "2022-05-14 15:23:21",
         "proxima": "2022-05-14 15:23:21",
         "email": "0"
@@ -424,7 +424,7 @@ export const maintenancesArray = [
         "sistema": "FACHADA - BRISE",
         "atividade": "Limpeza dos painéis e trilhos. Lubrificação das roldanas.",
         "periodicidade": "Anual",
-        "responsavel": "?",
+        "responsavel": "NÃO DEFINIDO",
         "ultima": "2022-05-14 15:23:59",
         "proxima": "2022-05-14 15:23:59",
         "email": "0"
@@ -434,7 +434,7 @@ export const maintenancesArray = [
         "sistema": "FACHADA - PLACA DE ALUMINIO (ACM)",
         "atividade": "Realizar inspeções nas fachadas veriﬁcando a integridade das placas\/painéis. Veriﬁcar a integridade do silicone entre as placas e os chapins. Limpeza Geral.",
         "periodicidade": "Anual",
-        "responsavel": "?",
+        "responsavel": "NÃO DEFINIDO",
         "ultima": "2022-05-14 15:24:57",
         "proxima": "2022-05-14 15:24:57",
         "email": "0"
@@ -1374,14 +1374,14 @@ export const maintenancesArray = [
         "sistema": "VIDROS",
         "atividade": "Limpeza não abrasiva dos vidros das clarabóias e peles de vidro.",
         "periodicidade": "Mensal",
-        "responsavel": "HELPPY?",
+        "responsavel": "HELPPY",
         "ultima": "2022-05-26 14:16:17",
         "proxima": "2022-05-26 14:16:17",
         "email": "1"
     },
     {
         "id": "150",
-        "sistema": "RESERVATORIOS DE AGUA",
+        "sistema": "RESERVATÓRIOS DE ÁGUA",
         "atividade": "Realizar a limpeza dos reservatórios de água potável",
         "periodicidade": "Semestral",
         "responsavel": "KLIN",
@@ -1391,10 +1391,10 @@ export const maintenancesArray = [
     },
     {
         "id": "151",
-        "sistema": "RESERVATORIOS DE AGUA IRRIGAÇAO",
+        "sistema": "RESERVATORIOS DE ÁGUA IRRIGAÇÃO",
         "atividade": "Realizar a limpeza dos reservatórios de água do sistema de irrigação",
         "periodicidade": "Anual",
-        "responsavel": "MANUTENÇAO SOLAR",
+        "responsavel": "MANUTENÇÃO SOLAR",
         "ultima": "2022-01-12 05:00:00",
         "proxima": "2023-02-13 16:22:33",
         "email": "1"
