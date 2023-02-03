@@ -2,6 +2,7 @@ import { Inject, Injectable } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { maintenancesArray } from 'src/utils/maintenances.array';
 import { ResponsibleEntity } from 'src/maintenances/entities/responsible.entity';
+import { CreateResponsibleDto } from 'src/maintenances/dto/create-responsible.dto ';
 
 @Injectable()
 export class CreateResponsibleService {
@@ -10,19 +11,18 @@ export class CreateResponsibleService {
     private responsibleRepository: Repository<ResponsibleEntity>
   ) { }
 
-  create(data) {
+  create(data: CreateResponsibleDto) {
     return new Promise(async (resolve, reject) => {
       try {
-        //const { category } = data;
         const responsibleExists = await this.responsibleRepository.findOne({
           where: {
-            responsible: data
+            responsible: data.responsible
           }
         })
 
         if (responsibleExists === null) {
           const addResponsible = this.responsibleRepository.create();
-          addResponsible.responsible = data.toUpperCase();
+          addResponsible.responsible = data.responsible.toUpperCase();
           addResponsible.created_at = new Date();
           addResponsible.updated_at = new Date();
 
@@ -30,16 +30,14 @@ export class CreateResponsibleService {
 
           resolve(responsibleInserted);
         }
-        console.log(data, "já existe no banco de dados.")
-
-        resolve(false)
+        reject(false)
 
       } catch (error) {
         reject(error);
       }
     })
   }
-
+/*
   initialInsert() {
     const maintenances = maintenancesArray;
     maintenances.map(async (maintenance) => {
@@ -53,6 +51,7 @@ export class CreateResponsibleService {
       }
     })
   }
+  */
   /*
     findAll() {
       return `This action returns all maintenances`;

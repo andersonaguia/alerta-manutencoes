@@ -71,10 +71,6 @@ export class CreatePreventiveService {
     })
   }
 
-  findAll() {
-    return `This action returns all preventive`;
-  }
-
   findOne(id: number) {
     return `This action returns a #${id} preventive`;
   }

@@ -2,7 +2,6 @@ import { Inject, Injectable } from '@nestjs/common';
 import { CategoryEntity } from 'src/maintenances/entities/category.entity';
 import { Repository } from 'typeorm';
 import { CreateCategoryDto } from 'src/maintenances/dto/create-category.dto';
-import { maintenancesArray } from 'src/utils/maintenances.array';
 
 @Injectable()
 export class CreateCategoryService {
@@ -11,20 +10,19 @@ export class CreateCategoryService {
     private categoryRepository: Repository<CategoryEntity>
   ) { }
 
-  create(data) {
-    console.log(data)
+  create(data: CreateCategoryDto) {
     return new Promise(async (resolve, reject) => {
       try {
-        //const { category } = data;
         const categoryExists = await this.categoryRepository.findOne({
           where: {
-            category: data
+            category: data.category
           }
         })
 
         if (categoryExists === null) {
+          console.log("ooi")
           const addCategory = this.categoryRepository.create();
-          addCategory.category = data.toUpperCase();
+          addCategory.category = data.category.toUpperCase();
           addCategory.created_at = new Date();
           addCategory.updated_at = new Date();
 
@@ -32,16 +30,13 @@ export class CreateCategoryService {
 
           resolve(categoryInserted);
         }
-        console.log(data, "já existe no banco de dados.")
-
-        resolve(false)
-
+        reject(false)
       } catch (error) {
         reject(error);
       }
     })
   }
-
+/*
   initialInsert() {
     const maintenances = maintenancesArray;
     maintenances.map(async (maintenance) => {
@@ -55,7 +50,7 @@ export class CreateCategoryService {
       }
     })
   }
-  /*
+  
     findAll() {
       return `This action returns all maintenances`;
     }

@@ -3,10 +3,14 @@ import { NestResponseBuilder } from 'src/core/http/nest-response-builder';
 import { CreatePreventiveDto } from '../dto/create-preventive.dto';
 import { UpdatePreventiveDto } from '../dto/update-preventive.dto';
 import { CreatePreventiveService } from '../services/create-preventive.service';
+import { FindAllPreventiveService } from '../services/findAll-preventive.service';
 
 @Controller()
 export class PreventiveController {
-  constructor(private readonly createPreventiveService: CreatePreventiveService) { }
+  constructor(
+    private readonly createPreventiveService: CreatePreventiveService,
+    private readonly findAllPreventiveService: FindAllPreventiveService
+  ) { }
 
   @Post('/preventive')
   async create(@Body() preventiveData: CreatePreventiveDto) {
@@ -25,9 +29,21 @@ export class PreventiveController {
     }
   }
 
-  @Get()
-  findAll() {
-    return this.createPreventiveService.findAll();
+  @Get('/preventive')
+  async findAll() {
+    try {
+      const result = await this.findAllPreventiveService.findAll();
+      return new NestResponseBuilder()
+        .withStatus(HttpStatus.OK)
+        .withBody(result)
+        .build();
+
+    } catch (error) {
+      return new NestResponseBuilder()
+        .withStatus(HttpStatus.BAD_REQUEST)
+        .withBody(error)
+        .build();
+    }
   }
 
   @Get(':id')
