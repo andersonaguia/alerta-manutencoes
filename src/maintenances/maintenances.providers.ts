@@ -1,6 +1,7 @@
 import { DataSource } from 'typeorm';
 import { CategoryEntity } from './entities/category.entity';
 import { FrequencyEntity } from './entities/frequency.entity';
+import { MailEntity } from './entities/mail.entity';
 import { ResponsibleEntity } from './entities/responsible.entity';
 
 export const maintenancesProviders = [
@@ -17,6 +18,11 @@ export const maintenancesProviders = [
     {
         provide: 'RESPONSIBLE_REPOSITORY',
         useFactory: (dataSource: DataSource) => dataSource.getRepository(ResponsibleEntity),
+        inject: ['DATA_SOURCE'],
+    },
+    {
+        provide: 'MAIL_REPOSITORY',
+        useFactory: (dataSource: DataSource) => dataSource.getRepository(MailEntity),
         inject: ['DATA_SOURCE'],
     }
 ];

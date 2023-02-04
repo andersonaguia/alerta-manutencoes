@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { FrequencyController } from './controllers/maintenances.controller';
 import { databaseProviders } from 'src/core/database/database.providers';
 import { maintenancesProviders } from './maintenances.providers';
 import { CreateCategoryService } from './services/category/create-category.service';
@@ -11,21 +10,26 @@ import { FindAllFrequencyService } from './services/frequency/findAll-frequency.
 import { FindAllResponsibleService } from './services/responsible/findAll-responsible.service';
 import { FindOneFrequencyService } from './services/frequency/findOne-frequency.service';
 import { FindOneResponsibleService } from './services/responsible/findOne-responsible.service';
+import { MaintenanceController } from './controllers/maintenances.controller';
+import { CreateMailService } from './services/mail/create-mail.service';
+import { FindAllMailService } from './services/mail/findAll-mail.service';
 
 @Module({
-  controllers: [FrequencyController],
+  controllers: [MaintenanceController],
   providers: [
     ...databaseProviders,
     ...maintenancesProviders,
     CreateFrequencyService,
     CreateCategoryService,
-    CreateResponsibleService,     
+    CreateResponsibleService,
+    CreateMailService,     
     FindOneCategoryService,
     FindOneFrequencyService,
     FindOneResponsibleService,
     FindAllCategoryService,
     FindAllFrequencyService,
-    FindAllResponsibleService
+    FindAllResponsibleService,
+    FindAllMailService
   ]
 })
 export class MaintenancesModule { }
