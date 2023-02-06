@@ -10,7 +10,6 @@ import { FindAllResponsibleService } from 'src/maintenances/services/responsible
 import { FindOneResponsibleService } from 'src/maintenances/services/responsible/findOne-responsible.service';
 import { Repository } from 'typeorm';
 import { CreatePreventiveDto } from '../dto/create-preventive.dto';
-import { UpdatePreventiveDto } from '../dto/update-preventive.dto';
 import { PreventiveEntity } from '../entities/preventive.entity';
 
 @Injectable()
@@ -69,17 +68,5 @@ export class CreatePreventiveService {
         reject(error);
       }
     })
-  }
-
-  findOne(id: number) {
-    return `This action returns a #${id} preventive`;
-  }
-
-  update(id: number, updatePreventiveDto: UpdatePreventiveDto) {
-    return `This action updates a #${id} preventive`;
-  }
-
-  remove(id: number) {
-    return `This action removes a #${id} preventive`;
   }
 }

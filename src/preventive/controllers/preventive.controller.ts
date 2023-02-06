@@ -1,17 +1,19 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, HttpStatus } from '@nestjs/common';
 import { NestResponseBuilder } from 'src/core/http/nest-response-builder';
 import { CreatePreventiveDto } from '../dto/create-preventive.dto';
-import { UpdatePreventiveDto } from '../dto/update-preventive.dto';
+import { UpdateSendMailDto } from '../dto/updateSendMail-preventive.dto';
 import { CreatePreventiveService } from '../services/create-preventive.service';
 import { FindAllPreventiveService } from '../services/findAll-preventive.service';
 import { ToExpirePreventiveService } from '../services/toExpire-preventive.service';
+import { UpdateSendMailPreventiveService } from '../services/updateSendMail-preventive.service';
 
 @Controller()
 export class PreventiveController {
   constructor(
     private readonly createPreventiveService: CreatePreventiveService,
     private readonly findAllPreventiveService: FindAllPreventiveService,
-    private readonly toExpirePreventiveService: ToExpirePreventiveService
+    private readonly toExpirePreventiveService: ToExpirePreventiveService,
+    private readonly updateSendMailPreventiveService: UpdateSendMailPreventiveService
   ) { }
 
   @Post('/preventive')
@@ -65,18 +67,26 @@ export class PreventiveController {
     }
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.createPreventiveService.findOne(+id);
-  }
+  @Patch('/preventive/updatesendmail')
+  async update(@Body() ids: UpdateSendMailDto[]) {
+    try {
+      const result: boolean = await this.updateSendMailPreventiveService.update(ids);
+      if (result) {
+        return new NestResponseBuilder()
+          .withStatus(HttpStatus.OK)
+          .withBody(result)
+          .build();
+      }
+      return new NestResponseBuilder()
+        .withStatus(HttpStatus.BAD_REQUEST)
+        .withBody("Falha ao atualizar o banco de dados")
+        .build();
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updatePreventiveDto: UpdatePreventiveDto) {
-    return this.createPreventiveService.update(+id, updatePreventiveDto);
-  }
-
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.createPreventiveService.remove(+id);
+    } catch (error) {
+      return new NestResponseBuilder()
+        .withStatus(HttpStatus.BAD_REQUEST)
+        .withBody(error)
+        .build();
+    }
   }
 }

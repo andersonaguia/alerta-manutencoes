@@ -12,6 +12,7 @@ import { FindOneResponsibleService } from 'src/maintenances/services/responsible
 import { FindOneFrequencyService } from 'src/maintenances/services/frequency/findOne-frequency.service';
 import { FindAllPreventiveService } from './services/findAll-preventive.service';
 import { ToExpirePreventiveService } from './services/toExpire-preventive.service';
+import { UpdateSendMailPreventiveService } from './services/updateSendMail-preventive.service';
 
 @Module({
   controllers: [PreventiveController],
@@ -27,7 +28,8 @@ import { ToExpirePreventiveService } from './services/toExpire-preventive.servic
     FindAllCategoryService,
     FindAllFrequencyService,
     FindAllResponsibleService,
-    ToExpirePreventiveService
+    ToExpirePreventiveService,
+    UpdateSendMailPreventiveService
   ]
 })
 export class PreventiveModule { }

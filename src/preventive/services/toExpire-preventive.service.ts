@@ -68,7 +68,7 @@ export class ToExpirePreventiveService {
                             }
 
                             if (
-                                (preventiveDate.toString() === atualDate.toString())
+                                (preventiveDate <= atualDate)
                                 && preventive.sendEmail === true
                             ) {
                                 return preventive;
