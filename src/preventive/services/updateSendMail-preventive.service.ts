@@ -21,7 +21,7 @@ export class UpdateSendMailPreventiveService {
       ids.map(async (id, i) => {
         try {
           const { affected } = await this.preventiveRepository.update({ id: +id }, sendMail);
-          console.log("Affected: ", affected);
+          
           if (affected != 0 && i === ids.length - 1) {
             result = true;
             resolve(result);
