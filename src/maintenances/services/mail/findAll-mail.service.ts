@@ -13,10 +13,19 @@ export class FindAllMailService {
         return new Promise(async (resolve, reject) => {
             try {
                 const allMails = await this.mailRepository.find();
-                resolve(allMails);
+                resolve(this.formatReturn(allMails));
             } catch (error) {
                 reject(error);
             }
         })
+    }
+
+    formatReturn(emails: MailEntity[]): MailEntity[] {
+        const response = emails.map((email) => {
+            delete email.created_at;
+            delete email.updated_at;
+            return email;
+        })
+        return response;
     }
 }
