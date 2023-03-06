@@ -5,11 +5,11 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-# <p align="center">API-Developers</p>
+# <p align="center">API-Manutenções</p>
 
 ## 💻 Sobre o projeto
 
-[ApiManutenções](https://github.com/andersonaguia/api-manutencoes) é uma API para gerenciamento de manutenções preventivas a serem realizadas.
+[ApiManutenções](https://github.com/andersonaguia/api-manutencoes) é uma API para cadastramento de manutenções preventivas a serem realizadas.
 
 ## ⚙️ Funcionalidades
 
@@ -25,8 +25,8 @@
 ---
 
 ## :construction: Pré-requisitos
-- Ter o [![NodeJS Badge](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white&link=https://nodejs.org/en/)](https://nodejs.org/en/) instalado na máquina;
-- Ter o [![Mysql Badge](https://img.shields.io/badge/MySQL-005C84?style=for-the-badge&logo=mysql&logoColor=white)](https://www.mysql.com/) instalado na máquina
+- Ter o [NodeJS](https://nodejs.org/en/) instalado na máquina;
+- Ter o [MySQL](https://www.mysql.com/) instalado na máquina
 #
 
 ## :warning: Configuração da aplicação
@@ -47,7 +47,7 @@ POST: http://localhost:3001/maintenances/responsible
 Headers: {
 	"Content-Type": "application/json"
 }
-Body{  
+Body: {  
 	"responsible": "Anderson"
 }
 ```
@@ -67,7 +67,7 @@ POST: http://localhost:3001/maintenances/category
 Headers: {
 	"Content-Type": "application/json"
 }
-Body{  
+Body: {  
 	"category": "Ar Condicionado"
 }
 ```
@@ -87,7 +87,7 @@ POST: http://localhost:3001/maintenances/frequency
 Headers: {
 	"Content-Type": "application/json"
 }
-Body{  
+Body: {  
 	"frequency": "MENSAL"
 }
 ```
@@ -174,7 +174,7 @@ POST: http://localhost:3001/preventive
 Headers: {
 	"Content-Type": "application/json"
 }
-Body:{
+Body: {
 	"category": 149,
 	"activity": "Teste data da manutenção",
 	"frequency": 8,
@@ -225,47 +225,48 @@ Headers: {
 	"body": {
 	"status": 200,
 	"headers": {},
-	"body": [
-		{
-			"id": 149,
-			"activity": "Ligar o sistema e verificar se está funcionando corretamente e se as unidades de montagem firmes. Limpeza dos ﬁltros, drenos, gabinetes, grelhas e demais componentes da evaporadoras.",
-			"last": "2022-05-30T13:00:00.000Z",
-			"next": "2023-12-14T05:48:56.000Z",
-			"sendEmail": true,
-			"frequency": {
-				"id": 4,
-				"frequency": "MENSAL"
-			},
-			"category": {
-				"id": 149,
-				"category": "AR CONDICIONADO"
-			},
-			"responsible": {
-				"id": 149,
-				"responsible": "DPI"
-			}
-		},
-		{
-			"id": 150,
-			"activity": "Hidrojateamento das condensadoras VRV com jato de baixa pressão e aplicação de vaselina líquida industrial.",
-			"last": "2022-05-28T16:30:00.000Z",
-			"next": "2023-06-03T16:30:00.000Z",
-			"sendEmail": true,
-			"frequency": {
-				"id": 2,
-				"frequency": "SEMANAL"
-			},
-			"category": {
-				"id": 149,
-				"category": "AR CONDICIONADO"
-			},
-			"responsible": {
-				"id": 149,
-				"responsible": "DPI"
-			}
-		}
-	]
-}
+	"body": {
+    [
+		  {
+			  "id": 149,
+			  "activity": "Ligar o sistema e verificar se está funcionando corretamente e se as unidades de montagem firmes. Limpeza dos ﬁltros, drenos, gabinetes, grelhas e demais componentes da evaporadoras.",
+			  "last": "2022-05-30T13:00:00.000Z",
+			  "next": "2023-12-14T05:48:56.000Z",
+			  "sendEmail": true,
+			  "frequency": {
+				  "id": 4,
+				  "frequency": "MENSAL"
+			  },
+			  "category": {
+				  "id": 149,
+				  "category": "AR CONDICIONADO"
+			  },
+			  "responsible": {
+				  "id": 149,
+				  "responsible": "DPI"
+			  }
+		  },
+		  {
+			  "id": 150,
+			  "activity": "Hidrojateamento das condensadoras VRV com jato de baixa pressão e aplicação de vaselina líquida industrial.",
+			  "last": "2022-05-28T16:30:00.000Z",
+			  "next": "2023-06-03T16:30:00.000Z",
+			  "sendEmail": true,
+			  "frequency": {
+				  "id": 2,
+				  "frequency": "SEMANAL"
+			  },
+			  "category": {
+				  "id": 149,
+				  "category": "AR CONDICIONADO"
+			  },
+			  "responsible": {
+				  "id": 149,
+				  "responsible": "DPI"
+			  }
+		  }
+	  ]
+  }
 }
 ```
 
@@ -275,10 +276,8 @@ PATCH: http://localhost:3001/preventive/updatesendmail
 Headers: {
 	"Content-Type": "application/json"
 }
-{
-	[
-	  1, 2, 3
-  ]
+Body: {
+	[ 1, 2, 3 ]
 }
 ```
 **Resultado:**
